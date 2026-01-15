@@ -17,10 +17,15 @@ def login_view(request):
                 return redirect('admin_dashboard')
 
             elif user.tipo_usuario == 'associado':
-                return redirect('minha_empresa')
+                return redirect('associado_dashboard')
 
             elif user.tipo_usuario == 'afiliado':
                 return redirect('meu_perfil')
+            
+            elif user.tipo_usuario == 'coletivo':
+                return redirect('coletivo_dashboard')
+
+            
 
             return redirect('home')
 
@@ -46,5 +51,23 @@ def register_view(request):
     return render(request, "accounts/register.html", {"form": form})
 
 @login_required
+def diretoria_dashboard(request):
+    return render(request, 'diretoria/dashboard.html')
+
+@login_required
+def associado_dashboard(request):
+    if request.user.tipo_usuario != 'associado':
+        return redirect('home')
+    return render(request, 'associado/dashboard.html')
+
+
+@login_required
 def meu_perfil(request):
     return render(request, 'accounts/perfil.html')
+
+@login_required
+def coletivo_dashboard(request):
+    if request.user.tipo_usuario != 'coletivo':
+        return redirect('home')
+    return render(request, 'coletivo/dashboard.html')
+

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Dashboard do Associado</h1>
+
+<p>Bem-vindo, {{ user.username }}</p>
+
+<ul>
+    <li><a href="{% url 'minha_empresa' %}">Minha Empresa</a></li>
+    <li><a href="{% url 'survey_list' %}">Pesquisas Anuais</a></li>
+</ul>
+
+{% endblock %}

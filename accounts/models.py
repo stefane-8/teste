@@ -6,6 +6,7 @@ class User(AbstractUser):
         ('diretoria', 'Diretoria'),
         ('associado', 'Associado'),
         ('afiliado', 'Afiliado'),
+        ('coletivo', 'Coletivo/Institucional'),
     ]
 
     tipo_usuario = models.CharField(

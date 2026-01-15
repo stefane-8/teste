@@ -1,0 +1,13 @@
+<h1>Bem-vindo, {{ user.username }}</h1>
+
+{% if user.tipo_usuario == 'diretoria' %}
+    <a href="{% url 'admin_dashboard' %}">Dashboard Diretoria</a>
+{% endif %}
+
+{% if user.tipo_usuario == 'associado' %}
+    <a href="{% url 'minha_empresa' %}">Minha Empresa</a>
+{% endif %}
+
+{% if user.tipo_usuario == 'afiliado' %}
+    <a href="{% url 'meu_perfil' %}">Meu Perfil</a>
+{% endif %}
