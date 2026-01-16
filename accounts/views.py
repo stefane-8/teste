@@ -36,12 +36,35 @@ def login_view(request):
 
     return render(request, "accounts/login.html", {"form": form})
 
+from django.contrib.auth.models import Group
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            user = form.save()
+
+            # Mapeia tipo_usuario -> nome do Group
+            mapa = {
+                "diretoria": "Diretoria",
+                "associado": "Associado",
+                "afiliado": "Afiliado",
+                "coletivo": "Coletivo/Institucional",
+            }
+
+            nome_grupo = mapa.get(user.tipo_usuario, "Afiliado")
+
+            # Garante que o grupo exista 
+            try:
+                grupo = Group.objects.get(name=nome_grupo)
+                user.groups.add(grupo)
+            except Group.DoesNotExist:
+                # Se o grupo não existir ainda, não quebra o cadastro
+                pass
+
             messages.success(request, "Conta criada com sucesso. Faça login.")
             return redirect("login")
 
