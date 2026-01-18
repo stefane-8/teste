@@ -88,6 +88,7 @@ static/ → arquivos estáticos (CSS, etc.)
 surveys/ → app de pesquisas
 templates/ → templates HTML
 manage.py → arquivo principal do Django
+```
 
 ### 🧠 Organização de Branches
 
