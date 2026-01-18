@@ -76,17 +76,18 @@ python manage.py runserver
 
 http://localhost:8000/
 
-### 📁 Estrutura geral
-
-accounts/      → app de autenticação (login e cadastro)
-companie/      → app relacionado à empresas
-config/        → configurações do projeto Django
-core/          → código principal
-projects/      → app de projetos
-public/        → arquivos públicos
-static/        → arquivos estáticos (CSS, etc.)
-surveys/       → app de pesquisas
-templates/     → templates HTML
+## 📁 Estrutura geral
+```md
+accounts/ → app de autenticação (login e cadastro)
+companie/ → app relacionado à empresas
+config/ → configurações do projeto Django
+core/ → código principal
+projects/ → app de projetos
+public/ → arquivos públicos
+static/ → arquivos estáticos (CSS, etc.)
+surveys/ → app de pesquisas
+templates/ → templates HTML
+manage.py → arquivo principal do Django
 
 ### 🧠 Organização de Branches
 
