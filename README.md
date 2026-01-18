@@ -24,11 +24,11 @@ O projeto utiliza:
 - SQLite (banco local)
 - HTML / CSS (templates)
 
-📦 Pré-requisitos
+### 📦 Pré-requisitos
 
 Antes de rodar o projeto localmente, instale:
 
-Python 3.x
+- Python 3.x
 
 pip
 
@@ -36,44 +36,48 @@ pip
 
 🚀 Instalação passo a passo
 1. Clone o repositório
+
 git clone https://github.com/stefane-8/teste.git
 
-2. Vá para a pasta do projeto
+### 2. Vá para a pasta do projeto
+
 cd teste
 
-3. Crie e ative um ambiente virtual
+### 3. Crie e ative um ambiente virtual
 
-Windows
+- Windows
 
 python -m venv venv
 venv\Scripts\activate
 
 
-Linux / macOS
+- Linux / macOS
 
 python -m venv venv
 source venv/bin/activate
 
-4. Instale as dependências
+### 4. Instale as dependências
+
 pip install -r requiriments.txt
 
-▶️ Como rodar o projeto
+### ▶️ Como rodar o projeto
 
-Execute as migrações:
+- Execute as migrações:
 
 python manage.py migrate
 
 
-Inicie o servidor:
+### Inicie o servidor:
 
 python manage.py runserver
 
 
-Acesse no navegador:
+### Acesse no navegador:
 
 http://localhost:8000/
 
-📁 Estrutura geral
+### 📁 Estrutura geral
+
 accounts/      → app de autenticação (login e cadastro)
 companie/      → app relacionado à empresas
 config/        → configurações do projeto Django
@@ -84,18 +88,18 @@ static/        → arquivos estáticos (CSS, etc.)
 surveys/       → app de pesquisas
 templates/     → templates HTML
 
-🧠 Organização de Branches
+### 🧠 Organização de Branches
 
 Padrões comuns para organização de branches:
 
-main → versão estável principal
+- main → versão estável principal
 
-dev → desenvolvimento
+- dev → desenvolvimento
 
-feature/* → novas funcionalidades
+- feature/* → novas funcionalidades
 
 
-📜 Licença
+### 📜 Licença
 
 Este projeto está sob a licença MIT.
 
